@@ -1,4 +1,5 @@
-Requires plexapi (pip install plexapi)
+Requires plexapi and requests
+pip install -r requirements.txt
 
 Usage: python duplicate.py
 
