@@ -12,13 +12,15 @@ for i, playlist in enumerate(plex.playlists()):
 	print i+1, ")", playlist.title
 choice = -1
 while choice == -1:
-	selection = input("Select playlist: ")
+	selection = raw_input("Select playlist: ")
 	try:
-		int(selection)
+		selection = int(selection)
 		if selection > 0 and selection <= i+1:
-				choice = selection - 1
+			choice = selection - 1
+		else:
+			print "Invalid selection"
 	except:
-		print "fcuK"
+		print "Invalid selection"
 new_playlist_name = raw_input("Enter new playlist name: ")
 Playlist.create(plex, new_playlist_name, plex.playlists()[choice].items())
 
