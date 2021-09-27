@@ -26,7 +26,7 @@ while choice == -1:
                 print("Invalid selection")
 new_playlist_name = input("Enter new playlist name: ")
 try:
-    Playlist.create(plex, new_playlist_name, plex.playlists()[choice].items())
+    Playlist.create(plex, new_playlist_name, None, plex.playlists()[choice].items())
     print("{playlist} created".format(playlist=new_playlist_name))
 except:
     print("Error")
